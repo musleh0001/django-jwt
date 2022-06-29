@@ -9,7 +9,7 @@ import PrivateRoute from "./utils/PrivateRoute";
 
 function App() {
 	return (
-		<BrowserRouter>
+		<>
 			<Header />
 			<Routes>
 				<Route path="/" element={<PrivateRoute />}>
@@ -18,7 +18,7 @@ function App() {
 				</Route>
 				<Route path="/login" element={<LoginPage />} />
 			</Routes>
-		</BrowserRouter>
+		</>
 	);
 }
 
