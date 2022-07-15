@@ -47,7 +47,7 @@ export const AuthProvider = ({ children }) => {
 			headers: {
 				"Content-Type": "application/json",
 			},
-			body: JSON.stringify({ refresh: authTokens.refresh }),
+			body: JSON.stringify({ refresh: authTokens?.refresh }),
 		});
 		if (response.status === 200) {
 			const data = await response.json();

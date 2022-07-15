@@ -22,9 +22,13 @@ class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
 
 
-@api_view(["POST"])
+@api_view(["GET"])
 def getRoutes(request):
-    routes = [reverse(viewname="token_obtain_pair"), reverse(viewname="token_refresh")]
+    routes = [
+        request.build_absolute_uri(reverse(viewname="token_obtain_pair")),
+        request.build_absolute_uri(reverse(viewname="token_refresh")),
+        request.build_absolute_uri(reverse(viewname="all-notes")),
+    ]
     return Response(routes)
 
 
